@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <style>
+      @media (min-width: 1281px) {
+        #map
+        {
+          height: 500px;
+          width: 1000px;
+        }
+      }
+      @media (min-width: 320px) and (max-width: 767px) {
+        #map
+        {
+          margin-top: 10px;
+          height: 200px;
+          width: 360px;
+        }
+        #map:hover
+        {
+          border: 2px solid black;
+          box-shadow: 5px 5px 10px gray;
+        }
+      }
+    </style>
+</head>
+<body>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.674321368261!2d72.13955271465684!3d21.7541481679951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3958c020ac9375d5%3A0xa7af0d9ab1ed8c50!2sBAPS%20Shri%20Swaminarayan%20Mandir%2C%20Bhavnagar!5e0!3m2!1sen!2sin!4v1665408053186!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map"></iframe>
+    <div id ="map"></div>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://kit.fontawesome.com/266b76cb57.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <!-- <script>
+        // Creating map options
+        var mapOptions = {
+           center: [33.0145765, -96.5396453],
+           zoom: 15
+        }
+        
+        // Creating a map object
+        
+        var map = new L.map('map', mapOptions);
+        let marker = new L.Marker([33.0145765, -96.5396453]);
+        marker.addTo(map);
+        // Creating a Layer object
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        
+        // Adding layer to the map
+        map.addLayer(layer);
+     </script> -->
+</body>
+</html>

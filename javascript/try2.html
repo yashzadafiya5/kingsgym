@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        excel colum calculater
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                              <th>name</th>
+                              <th width="25%">python</th>
+                              <th width="25%">java</th>
+                              <th width="25%">flutter</th>
+                              <th>Total</th>
+                              <th>avrage</th>
+                            </tr>
+                            <tr class="student">
+                              <td>yash</td>
+                              <td class="html subject">60</td>
+                              <td class="subject">70</td>
+                              <td class="subject">80</td>
+                              <td class="total"></td>
+                              <td class="avrage"></td>
+                            </tr>
+                            <tr class="student">
+                              <td>vishal</td>
+                              <td class="html subject">80</td>
+                              <td class="subject">90</td>
+                              <td class="subject">92</td>
+                              <td class="total"></td>
+                              <td class="avrage"></td>
+                            </tr>
+                            <tr class="student">
+                              <td>bhavdeep</td>
+                              <td class="html subject">80</td>
+                              <td class="subject">85</td>
+                              <td class="subject">60</td>
+                              <td class="total"></td>
+                              <td class="avrage"></td>
+                            </tr>
+                            <tr class="newtotals">
+                                <td>all Total</td>
+                              <td id="newtotal1">140</td>
+                              <td class="newtotal2">245</td>
+                              <td class="newtotal3">232</td>
+                              <td class="newtotal">697</td>
+                              <td class="newavrage">232.33</td>
+                            </tr>
+                          </table>
+                          <h2 id="mini">Title</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script>
+    var subjects = document.getElementsByClassName("subject");
+    var subsize = subjects.length;
+    var index = 0;
+    while (index < subsize) {
+      subjects[index].addEventListener(
+        "click",
+        function (e) {
+          var data = e.target.innerText;
+          e.target.innerHTML =
+            "<input type=number id=data1 class=form-control value='" +
+            data +
+            "' />";
+            
+          var datas = document.getElementById("data1");
+          datas.addEventListener(
+            "blur",
+            function (event) {
+              e.target.innerText = event.target.value;
+              tdcalculate();
+            },
+            false
+          );
+          datas.addEventListener(
+            "mouseout",
+            function (event) {
+              e.target.innerText = event.target.value;
+              tdcalculate();
+            },
+            false
+          );
+        },
+        false
+      );
+      index++;
+    }
+    function tdcalculate(){
+      var htmlmarks=document.getElementsByClassName('html');
+      console.log(htmlmarks)
+      var size=htmlmarks.length;
+      var index=0;
+      var totalmarks=0;
+      while (index<size)
+      {
+        totalmarks=totalmarks+parseInt(htmlmarks[index].innerText);
+        index++
+      }
+      console.log(totalmarks);
+    }
+    //function tdcalculate()
+    //    {
+    //        var students = document.getElementsByClassName('student');
+    //    size=students.length;
+    //    studentsposition=0;
+    //    while (studentsposition<size)
+    //    {
+    //        var yashs=students[studentsposition].getElementsByClassName('yash');
+    //        var yashssize=yashs.length;
+    //        var index=0;
+    //        var tdtotal = 0;
+    //        while (index<yashssize)
+    //        {
+    //            var tdtotal =
+    //            tdtotal + parseInt(yashs[index].innerText);
+    //            index++;
+    //        }
+    //        console.log(tdtotal);
+    //        //document.getElementById('newtotal1').innerHTML=tdtotal;
+    //        
+    //        studentsposition++;
+    //    }
+        
+    //}
+    
+    
+    //var sum = 0;
+    //for (let i = 0; i < yashssize; i++) {
+    //    sum += parseInt(yashs[i].innerText);
+    //}
+    //console.log(sum);
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ 
+    </style>
+</head>
+<body>
+    <!-- write a program to create function that will return area of triangle using given height and base as input  -->
+    <h1 id="h1 tag">this is first exarsice</h1>
+    
+    <script>
+        //create function
+        function triangle(base,height)
+        {
+            var area=(base*height)/2;
+            return area;
+        }
+        var base=parseInt(prompt("enter a base value:="));
+        var height=parseInt(prompt("enter a height value:="));
+
+        let value=triangle(base,height);
+        document.getElementById("h1 tag").innerHTML = "triangle="+value; 
+    </script>
+</body>
+</html>

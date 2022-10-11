@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        @media(min-width:1281px)
+        {
+            
+            .header {
+                background-color: lightslategrey;
+                margin: 5px;
+                padding: 5px;
+            }
+            .content {
+                width: 70%;
+                padding-left: 50px;
+                padding-top: 40px;
+                display: flex;
+            }
+
+            .content>ul {
+                display: flex;
+                list-style-type: none;
+                justify-content: space-around;
+            }
+
+            .content>ul>li>a:link {
+                color: white;
+                letter-spacing: 3px;
+                font-size: xx-large;
+                text-decoration: none;
+                justify-content: space-around;
+                cursor:pointer;
+                transition: all 1s ease-in-out;
+            }
+
+        }
+        @media(min-width:320px) and (max-width:720px)
+        {
+            .header {
+                background-color: lightslategrey;
+            }
+            .content
+            {
+            display: flex;
+            width: 70%;
+            padding-left: 2px;
+            padding-top: 10px;
+        }
+        .content>img
+        {
+            height: 80px;
+            width: 80px;
+        }
+        .content>ul
+        {
+            padding: 10px;
+            display: flex;
+            border:2px solid black;
+            justify-content: space-between;
+            
+        }
+        .content>ul>li
+        {
+            list-style-type: none;
+        }
+        }
+        .content>ul>li>a
+        {
+            margin: 3px;
+            text-decoration: none;
+            justify-content: space-around;
+            letter-spacing: 3px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="../images/muscles.png" >
+            </div>
+            <div class="content">
+            <ul>
+                <li><a href="">home</a></li>
+                <li><a href="">result</a></li>
+                <li><a href="">gallery</a></li>
+                <li><a href="">contect</a></li>
+                <!-- <li><i class="fa-solid fa-home"></i><a href=""></a> home</li>
+                <li><i class="fa-solid fa-square-poll-horizontal"></i>result</li>
+                <li><i class="fa-brands fa-envira"></i>gallery</li>
+                <li><i class="fa-solid fa-address-book"></i>contect</li> -->
+            </ul>
+        </div>
+    </div>
+    maincontent
+    <script src="https://kit.fontawesome.com/266b76cb57.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 5) write a program to calculate and return bmi of given weight and height (foot,inch) using arrow functions  -->
+
+    <h1>bmi calculater</h1>
+    <p id="bmi">output will come here</p>
+    <script>
+        function bmi(hightinc,hightfoot,weight)
+        {
+            var foot=hightinc/12;
+            var totalfoot= foot+hightfoot;
+            var meter=totalfoot/3.281;
+            var BMI = weight/(meter*meter);
+            return BMI;
+        }
+        var weight=parseFloat(prompt("enter your weight:"));
+        var hightfoot=parseFloat(prompt("enter your hight in foot"));
+        var hightinc=parseFloat(prompt("enter your hight in inch"));
+        var BMI=bmi(hightinc,hightfoot,weight);
+        document.getElementById('bmi').innerHTML='BMI IS ='+BMI;
+        
+    </script>
+    <!-- var width=parseFloat(prompt("enter your width"));
+    var result=bmi(hight,width); -->
+    <!-- <script>
+        let foot = (hightinc) => hightinc/12;
+        let totalfoot = (foot,hightfoot) => foot+hightfoot;
+        let meter = (totalfoot) => totalfoot/3.281;
+        let BMI = (weight,meter) => weight/(meter*meter);
+
+        var weight=parseFloat(prompt("enter your weight:"));
+        var hightfoot=parseFloat(prompt("enter your hight in foot"));
+        var hightinc=parseFloat(prompt("enter your hight in inch"));
+        var new1=foot(hightinc);
+        //document.getElementById('bmi').innerHTML='BMI IS ='+new1;
+    </script> -->
+</body>
+</html>
+
+
+<!-- foot=self.heightin/12
+        total_foot=foot+self.hightft
+        meter=total_foot/3.281
+        BMI = self.weight/(meter*meter) -->

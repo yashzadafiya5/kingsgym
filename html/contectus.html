@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" href="../css/contectus.css">
+</head>
+
+<body>
+
+    <body>
+        <div id="header">
+            <div id="logo"><a href=""><img src="../images/muscles.png" height="100px" width="100px" alt=""></a></div>
+            <div id="content">
+                <ul>
+                    <li><a href="new1"> HOME</a></li>
+                    <li><a href="RESULT">RESULT</a></li>
+                    <li><a href="GALLARY">GALLARY</a></li>
+                    <li><a href="JOB">JOB</a></li>
+                </ul>
+            </div>
+            <div id="rightdata">
+                <ul>
+                    <li>
+                        <h3><i class="fa-solid fa-phone"></i>9662512857</h3>
+                    </li>
+                    <li><i class="fa-solid fa-envelope"></i> theeasylearn@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div id="uperslider">
+            <ul type="square">
+                <li><b>Contact Torgerson Design Partners</b> </li>
+                <li>
+                    <h1>How can we help you?</h1>
+                </li>
+            </ul>
+        </div>
+        <div id="maincontent">
+            <div class="leftsidecontent">
+                <h1>Name*</h1>
+                <input type="text" name="name" placeholder="Enter Your Name ">
+                <h1>Email Address*</h1>
+                <input type="email" name="email address" placeholder="enter your email address">
+                <h1>Mobile Number</h1>
+                <input type="text" name="mobilenumber" placeholder="Enter Your MObile Number ">
+                <h1>Message*</h1>
+                <textarea name="address" cols="40" rows="2" id="address" required
+                    placeholder="enter your address "></textarea>
+                <br><label for="detail">
+                    <input type="checkbox" name="detail" id="detail" value="1"><i>Sign me up for news & updates from
+                        king's Gym</i>
+                </label>
+
+            </div>
+            <div class="rightsidecontent">
+                <h1>Contact us</h1>
+                <div class="address">
+                    <h1><i class="fa-solid fa-location-dot"></i></h1>
+                    <h2>Shop No 201, Shreeji Arcade, Godadara Dindoli Road, Godadara, Surat-395012,Gujrat,India</h2>
+                </div>
+                <div class="Email">
+                    <h1><i class="fa-solid fa-envelope"></i></h1>
+                    <h2>kings55@gmail.com</h2>
+                </div>
+                <div class="mobile">
+                    <h1><i class="fa-solid fa-mobile-button"></i></h1>
+                    <h2>9904870503</h2>
+                </div>
+
+            </div>
+        </div>
+        <div id="contentmap">
+            <h1>Visit our Gym , located in the heart of the Surat.</h1>
+            <div id="map"></div>
+        </div>
+        <script src="https://kit.fontawesome.com/266b76cb57.js" crossorigin="anonymous"></script>
+        <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script>
+            // Creating map options
+            var mapOptions = {
+            center: [21.75401,72.14341],
+            zoom:12
+            }
+            
+            // Creating a map object
+            var map = new L.map("map", mapOptions);
+            
+            // Creating a Layer object
+            var layer = new     L.TileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png");
+            let marker = new L.Marker([21.75401,72.14341]);
+            marker.addTo(map);
+            // Adding layer to the map
+            map.addLayer(layer);
+            </script>
+            <div id="footer">
+                <div class="footer1"><a href="#"><img src="../images/weightlifting.png" alt="" height="100px" width="100px"></a></div>
+                <div class="footer2">
+                    <div class="f1">
+                        <h3><a href="#">Portfolio</a></h3>
+                        <h3><a href="#">Services</a></h3>
+                        <h3><a href="#">Industries</a></h3>
+                        <h3><a href="#">Our Partners</a></h3>
+                    </div>
+                    <div class="f2">
+                        <h3><a href="#">ABOUT</a></h3>
+                        <h3><a href="#">CONTACT US</a></h3>
+                        <h3><a href="#">JOIN OUR TEAM</a></h3>
+                    </div>
+                    <div class="f3">
+                        <h1>Get News + Updates</h1>
+                        <p>Stay connected with us! Get updates, follow <br> projects from sketchpad to completion, and more.</p>
+                    </div>  
+                </div>
+                <div id="footer3">
+                    <div class="inputemail"><input type="search" name="search"  placeholder="ENTER YOUR EMAIL ADDRESS"></div>
+                    
+                </div>
+                <div id="footer4">
+                    <div class="text"><h6>© Copyright 2022 Torgerson Design Partners.</h6></div>
+                    <div class="privecy"><a href="#">Privacy Policy</a></div>
+                    <div class="terms"><a href="#">Terms condition</a></div>
+                    <div class="siteby">Site By: <a href="#">YASH ZADAFIYA</a></div>
+                </div>
+           
+            </div>
+    </body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form
+        {
+            background-color: lightblue;
+            padding: 10px;
+            margin: auto;
+            width: 50%;
+        }
+        label
+        {
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- style="background-color: red ;" -->
+    <h1 align="center" style="margin-top: 20px;">animated form</h1>
+    <form action="" id="form">
+        <label for="color" style="text-align: left; ">
+            select color 
+            <input type="color" name="" id="color">
+        </label>
+        <label for="date" style="text-align: left; ">
+            select date 
+            <input type="date" name="" id="date">
+        </label>
+        <label for="datetime" style="text-align: left; ">
+            select datetime 
+            <input type="datetime" name="" id="datetime">
+        </label>
+        <label for="email" style="text-align: left; ">
+            select email 
+            <input type="email" name="" id="email">
+        </label>
+        <label for="file" style="text-align: left; ">
+            select file 
+            <input type="file" name="" id="file">
+        </label>
+        <label for="month" style="text-align: left; ">
+            select month
+            <input type="month" name="" id="month">
+        </label>
+        <label for="password" style="text-align: left; ">
+            select password
+            <input type="password" name="" id="password">
+        </label>
+        <label for="range" style="text-align: left; " id="rangee" >
+            select range
+            <input type="range" name="" id="range" />
+        </label>
+        <label for="submit" >
+            <input type="submit" name="" id="submit" style="padding: 10px 300px 10px 300px; ">
+        </label>
+
+    </form>
+    <script>
+        var range= document.getElementById('rangee');
+        var submit=document.getElementById("submit");
+        let form=document.getElementById('form')
+        range.addEventListener("change",function(e){
+            let ranges=e.target.value;
+            if (ranges<50)
+            {
+                range.style.border = "2px solid red";
+                range.style.backgroundColor="red"
+                range.style.boxShadow='5px 5px 10px gray'
+            }
+            else
+            {
+                range.style.border = "2px solid green";
+                range.style.backgroundColor="green"
+                range.style.boxShadow='5px 5px 10px gray'
+            }
+            
+        },false);
+        color.addEventListener("change",function(e){
+            let color=e.target.value;
+            form.style.backgroundColor=color;
+            form.style.border='4px solid black';
+            form.style.padding='8px';
+            form.style.boxShadow='5px 5px 10px gray';
+            
+        },false);
+    </script>
+</body>
+</html>

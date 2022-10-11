@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>conditional variables</h1>
+
+    <script>
+        var message;
+        var number=parseInt(prompt('enter your number ','0'));
+        console.log(number);
+
+        if (number==10)
+        {
+            message='you are a right place ';
+        }
+        else if  (number==12)
+        {
+            message='if you are not 10 then you are next 12 round in select so wait ';
+        }
+        else
+        {
+            message='you are not eligible'
+        }
+        var message=(number>=10)?"ok this is big number":'number is to small';
+
+        document.write(message);
+        console.log(message);
+        
+    </script>
+</body>
+</html>

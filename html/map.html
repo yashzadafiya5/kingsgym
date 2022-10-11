@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+</head>
+
+<body>
+    <div id="map" style="height: 700px; width:1500px;"></div>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <script>
+        var mapOptions = {
+            center: [21.7540071, 72.1437112],
+            zoom: 18
+        }
+        let customIcon = {
+            iconUrl:"https://www.flaticon.com/free-icon/location_4781517" ,
+            iconSize:[40,40]
+        }
+        let myIcon = L.icon(customIcon);
+        var map = new L.map('map', mapOptions);
+        let marker = new L.Marker([21.7540071, 72.1437112]); marker.addTo(map);
+        
+        var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        
+        
+        map.addLayer(layer);
+    </script>
+</body>
+
+</html>

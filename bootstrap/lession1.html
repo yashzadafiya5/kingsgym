@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel='stylesheet'
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin='anonymous'
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: hsl(0, 0, 94%);
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .largecard {
+        margin: 10px 0px 10px 0px;
+        padding: 20px 10px 20px 10px;
+      }
+
+      @media (min-width: 1281px) {
+        .textstyle {
+          font-size: 40px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          outline: none;
+        }
+      }
+
+      /* code in this block will be applied only if device width>1281 */
+
+      @media (min-width: 1025px) and (max-width: 1280px) {
+        /* code in this block will be applied only if device width>1025 and <1280 */
+      }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        /* code in this block will be applied only if device width>768 and <1024 */
+      }
+      @media (min-width: 320px) and (max-width: 767px) {
+        /* code in this block will be applied only if device width>320 and <480 */
+        .flipimage {
+          height: 280px;
+          width: 290px;
+        }
+        .mainsliders
+        {
+          height: 300px;
+        }
+        .main-text
+        {
+          font-size: 15px;
+          
+        }
+        .footer-texts
+        {
+          font-size: 12px;
+        }
+      }
+
+      .indicator > li:hover {
+        border-radius: 100%;
+        transform: rotate(0.5turn);
+      }
+
+      @keyframes scale {
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      span {
+        display: inline-block;
+        opacity: 0;
+        filter: blur(4px);
+      }
+
+      span:nth-child(1) {
+        animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+      }
+
+      span:nth-child(2) {
+        animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+      }
+
+      span:nth-child(3) {
+        animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+      }
+
+      @keyframes fade-in {
+        100% {
+          opacity: 1;
+          filter: blur(0);
+        }
+      }
+      /*meet our team*/
+      #team {
+        background: #eee !important;
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #108d6f;
+        border-color: #108d6f;
+        box-shadow: none;
+        outline: none;
+      }
+
+      .btn-primary {
+        color: #fff;
+        background-color: #007b5e;
+        border-color: #007b5e;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      section .section-title {
+        text-align: center;
+        color: #007b5e;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+      }
+
+      #team .card {
+        border: none;
+        background: #ffffff;
+      }
+
+      .image-flip:hover .backside,
+      .image-flip.hover .backside {
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        border-radius: 0.25rem;
+      }
+
+      .image-flip:hover .frontside,
+      .image-flip.hover .frontside {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+      }
+
+      .mainflip {
+        -webkit-transition: 1s;
+        -webkit-transform-style: preserve-3d;
+        -ms-transition: 1s;
+        -moz-transition: 1s;
+        -moz-transform: perspective(1000px);
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        transition: 1s;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+
+      .frontside {
+        position: relative;
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        z-index: 2;
+        margin-bottom: 30px;
+      }
+
+      .backside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: white;
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+        -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+        box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+      }
+
+      .frontside,
+      .backside {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: 1s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transition: 1s;
+        -moz-transform-style: preserve-3d;
+        -o-transition: 1s;
+        -o-transform-style: preserve-3d;
+        -ms-transition: 1s;
+        -ms-transform-style: preserve-3d;
+        transition: 1s;
+        transform-style: preserve-3d;
+      }
+
+      .frontside .card,
+      .backside .card {
+        min-height: 312px;
+      }
+
+      .backside .card a {
+        font-size: 18px;
+        color: #007b5e !important;
+      }
+
+      .frontside .card .card-title,
+      .backside .card .card-title {
+        color: #007b5e !important;
+      }
+
+      /*meet our team*/
+      /*blogs*/
+      section {
+        padding: 100px 0;
+      }
+      .details-card {
+        background: #ecf0f1;
+      }
+
+      .card-content {
+        background: #ffffff;
+        border: 4px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+          0 2px 10px 0 rgba(0, 0, 0, 0.12);
+      }
+
+      .card-img {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0;
+        z-index: 1;
+      }
+
+      .card-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .card-img span {
+        position: absolute;
+        top: 15%;
+        left: 12%;
+        background: #1abc9c;
+        padding: 6px;
+        color: #fff;
+        font-size: 12px;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        transform: translate(-50%, -50%);
+      }
+      .card-img span h4 {
+        font-size: 12px;
+        margin: 0;
+        padding: 10px 5px;
+        line-height: 0;
+      }
+      .card-desc {
+        padding: 1.25rem;
+      }
+
+      .card-desc h3 {
+        color: #000000;
+        font-weight: 600;
+        font-size: 1.5em;
+        line-height: 1.3em;
+        margin-top: 0;
+        margin-bottom: 5px;
+        padding: 0;
+      }
+
+      .card-desc p {
+        color: #747373;
+        font-size: 14px;
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 1.5;
+        margin: 0px;
+        margin-bottom: 20px;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+      }
+      .btn-card {
+        background-color: #1abc9c;
+        color: #fff;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+          0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        padding: 0.84rem 2.14rem;
+        font-size: 0.81rem;
+        -webkit-transition: color 0.15s ease-in-out,
+          background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+          -webkit-box-shadow 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+        -o-transition: color 0.15s ease-in-out,
+          background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+          box-shadow 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+          -webkit-box-shadow 0.15s ease-in-out;
+        margin: 0;
+        border: 0;
+        -webkit-border-radius: 0.125rem;
+        border-radius: 0.125rem;
+        cursor: pointer;
+        text-transform: uppercase;
+        white-space: normal;
+        word-wrap: break-word;
+        color: #fff;
+      }
+      .btn-card:hover {
+        background: orange;
+      }
+      a.btn-card {
+        text-decoration: none;
+        color: #fff;
+      }
+      #blogss {
+        cursor: pointer;
+        border-radius: 50px;
+      }
+      /* End
+      /*blogs*/
+      /*gallery*/
+        .wall_img_1 {width:100%;height:600px;margin:40px auto; transition: all .2s ease-in-out;} 
+        .wall_img_2 {width:100%;height:400px;margin:20px auto; transition: all .2s ease-in-out;} 
+        .wall_img_1:hover,.wall_img_2:hover{filter: drop-shadow(5px 5px 10px black)        }
+        .wall_img_1:before,.wall_img_2:before {content: attr(id);opacity:0;transition: all .2s ease-in-out;width:100%;position:absolute;top:40%;text-align:center;display:block;font-size:44px;color:black; mix-blend-mode: overlay;}
+        .wall_img_1:hover::before,.wall_img_2:hover::before {content: attr(id);opacity:1;}
+      /*gallery*/
+
+    </style>
+  </head>
+  <body>
+    <!-- responsive navbar -->
+    <nav class="navbar navbar-expand-lg mb-1 fixed-top bg-dark">
+      <div class="container-fluid">
+        <a href="#"
+          ><img src="../images/muscles.png" height="50px" width="50px"
+        /></a>
+        &nbsp;&nbsp;&nbsp;
+        <a class="navbar-brand" href="#"
+          ><span class="display-7 text-white">King's Gym</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul
+            class="navbar-nav mb-2 mb-lg-0 nav-pills"
+            id="pills-tab"
+            role="tablist"
+          >
+          <a href="#" class="text-decoration-none">
+            <li class="nav-item " role="presentation">
+              <button
+                class="nav-link active text-white"
+                id="nav-home-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-home"
+                type="button"
+                role="tab"
+                aria-controls="nav-home"
+                aria-selected="true"
+              >
+                Home
+              </button>
+            </a>
+            </li>
+            <li class="nav-item">
+              <a href="#result" class="text-decoration-none">
+              <button
+                class="nav-link text-white"
+                id="pills-contact-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-contact"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+                href="result"
+              >
+                RESULT
+              </button>
+            </a>
+            </li>
+            <li class="nav-item">
+              <a href="#flip-slider" class="text-decoration-none">
+              <button
+                class="nav-link text-white"
+                id="pills-contact-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-contact"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+              >
+                Team
+              </button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#blog" class="text-decoration-none">
+              <button
+                class="nav-link text-white"
+                id="pills-contact-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-contact"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+              >
+                Blog's
+              </button>
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a href="#gallery" class="text-decoration-none">
+              <button
+                class="nav-link text-white"
+                id="pills-contact-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-contact"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+              >
+                Gallery
+              </button>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- responsive navbar -->
+    <!-- first slider start -->
+
+    <div class="container-fluid mt-5 p-1 border" >
+      <div class="row mt-3">
+        <div class="col-lg-12" >
+          <div
+            id="carouselWithCaptions"
+            class="carousel slide pointer-event"
+            data-bs-ride="carousel"
+          >
+            <ol class="carousel-indicators indicator">
+              <li
+                data-bs-target="#carouselWithCaptions"
+                data-bs-slide-to="0"
+                class=""
+              ></li>
+              <li
+                data-bs-target="#carouselWithCaptions"
+                data-bs-slide-to="1"
+                class=""
+              ></li>
+              <li
+                data-bs-target="#carouselWithCaptions"
+                data-bs-slide-to="2"
+                class="active"
+                aria-current="true"
+              ></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img
+                  src="../images/ricardo-henri-IBlWVIGnXag-unsplash.jpg"
+                  class="d-block w-100 image mainsliders" 
+                  alt="Slide 1"
+                />
+                <div class="carousel-caption d-none d-sm-block">
+                  <h5>First slide label</h5>
+                  <p>
+                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="../images/anastase-maragos-aclkvEMIfL8-unsplash.jpg"
+                  class="d-block w-100 mainsliders"
+                  alt="Slide 2"
+                />
+                <div class="carousel-caption d-none d-sm-block">
+                  <h5>Second slide label</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item active">
+                <img
+                  src="../images/karsten-winegeart-0Wra5YYVQJE-unsplash.jpg"
+                  class="d-block w-100 mainsliders"
+                  alt="Slide 3"
+                />
+                <div class="carousel-caption d-none d-sm-block">
+                  <h5>Third slide label</h5>
+                  <p>
+                    Praesent commodo cursus magna, vel scelerisque nisl
+                    consectetur.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselWithCaptions"
+              role="button"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselWithCaptions"
+              role="button"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- slider -->
+
+    <!-- sliders -->`
+
+    <div class="container-fluid bg-dark border" id="result">
+      <div class="container my-5">
+        <!-- text -->
+        <h2 class="text-center fw-bold display-4 mb-1 text-white main-text">
+          Challenging Yourself <span class="text-danger display-3 main-text">Every Day Is One</span>
+        </h2>
+        <h2 class="text-center fw-bold mb-5 text-danger main-text">
+          of the most
+          <span class="text-white"
+            >exciting ways to live.</span
+          >
+        </h2>
+        <!-- text -->
+        <div class="row">
+          <div class="col-12 m-auto">
+            <div class="owl-carousel owl-theme">
+              <div class="item mb-2">
+                <div class="card border-0 shadow">
+                  <img src="../images/result4.jpg" alt="" class="card-img-top" />
+                  <div class="card-body">
+                    <div class="card-title text-center">
+                      <h4 ><span class="text-dark">Everything is <span class="text-danger">possible</span> </span> </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="card border-0 shadow">
+                  <img src="../images/result2.jpg" alt="" class="card-img-top" />
+                  <div class="card-body">
+                    <div class="card-title text-center">
+                      <h5><span class="text-danger">be the best <span class="text-dark">vesion of you</span></span></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="card border-0 shadow">
+                  <img src="../images/result3.jpg" height="215px" alt="" class="card-img-top" />
+                  <div class="card-body ">
+                    <div class="card-title text-center">
+                      <h6><span class="text-dark">Do it Becuse <span class="text-danger">they said you couldn't</span></span></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="card border-0 shadow">
+                  <img src="../images/result1.jpg" alt="" class="card-img-top" />
+                  <div class="card-body">
+                    <div class="card-title text-center">
+                      <h5><span class="text-danger">Let's See How <span class="text-dark">Far i can Go</span></span></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="card border-0 shadow">
+                  <img src="../images/result5.jpg" height="215px" alt="" class="card-img-top" />
+                  <div class="card-body">
+                    <div class="card-title text-center">
+                      <h6><span class="text-dark">Winners Train <span class="text-danger">Loosers Complain</span></span></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="card border-0 shadow">
+                  <img src="../images/result6.jpg" alt="" height="215px"class="card-img-top" />
+                  <div class="card-body">
+                    <div class="card-title text-center">
+                      <h6><span class="text-danger">come with<span class="text-dark">Discipline</span></span></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sliders -->
+    <!-- Team -->
+    <div class="container-fluid"  id="flip-slider" >
+      <section id="team" class="pb-5">
+        <div class="container">
+          <div id="mod" class="text-center mb-5">
+            <h1>
+              <span class="text-danger">Meet</span>
+              <span>Our</span>
+              <span>team</span>
+            </h1>
+          </div>
+          <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                <div class="mainflip flip-0">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body ml-5 bg-dark">
+                        <img
+                          src="../images/flip1.jpg"
+                          alt=""
+                          class="flipimage"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">lakum bhavdeep</h4>
+                        <p class="card-text">
+                          This is basic card with image on top, title,
+                          description and button.This is basic card with image
+                          on top, title, description and button.This is basic
+                          card with image on top, title, description and button.
+                        </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                <div class="mainflip flip-0">
+                  <div class="frontside" style="border-radius: 6px">
+                    <div class="card">
+                      <div class="card-body ml-5 bg-dark">
+                        <img
+                          src="../images/flip2.jpg"
+                          alt=""
+                          class="flipimage"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">param patel</h4>
+                        <p class="card-text">
+                          This is basic card with image on top, title,
+                          description and button.This is basic card with image
+                          on top, title, description and button.This is basic
+                          card with image on top, title, description and button.
+                        </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                <div class="mainflip flip-0">
+                  <div class="frontside">
+                    <div class="card">
+                      <div class="card-body ml-5 bg-dark">
+                        <img
+                          src="../images/flip3.jpg"
+                          alt=""
+                          class="flipimage"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="backside">
+                    <div class="card">
+                      <div class="card-body text-center mt-4">
+                        <h4 class="card-title">yash zadafiya</h4>
+                        <p class="card-text">
+                          This is basic card with image on top, title,
+                          description and button.This is basic card with image
+                          on top, title, description and button.This is basic
+                          card with image on top, title, description and button.
+                        </p>
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-facebook"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-skype"></i>
+                            </a>
+                          </li>
+                          <li class="list-inline-item">
+                            <a
+                              class="social-icon text-xs-center"
+                              target="_blank"
+                              href="https://www.fiverr.com/share/qb8D02"
+                            >
+                              <i class="fa fa-google"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ./Team member -->
+
+            <!-- ./Team member -->
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Team -->
+    <!-- blog -->
+    <section class="details-card text-bg-dark mt-4" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-3" >
+            <div class="card-content">
+              <div class="card-img">
+                <img src="../images/blog2.jpg" alt=""  />
+                <span id="blogss"><h4>Breakfast</h4></span>
+              </div>
+              <div class="card-desc">
+                <h3>Breakfast: Sundae for Sunday?</h3>
+                <p>
+                  In show dull give need so held. One order all scale sense her
+                  gay style wrote. Incommode our… voluptas totam
+                </p>
+                <a href="#" class="btn-card">Read</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card-content">
+              <div class="card-img">
+                <img src="../images/blog1.jpg" alt="" />
+                <span id="blogss"><h4>Female Bodybuilding</h4></span>
+              </div>
+              <div class="card-desc">
+                <h3>
+                  Female Bodybuilding and Fitness Motivation -- Live Your Dream
+                </h3>
+                <p>
+                  Society excited by cottage private an it esteems. Fully begin
+                  on by wound an. Girl rich in do…
+                </p>
+                <a href="#" class="btn-card">Read</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card-content">
+              <div class="card-img">
+                <img src="../images/blog3.jpg" alt="" />
+                <span id="blogss"><h4>Proper Gym</h4></span>
+              </div>
+              <div class="card-desc">
+                <h3>Proper Gym Etiquette: How to Not be a Newbie in the Gym</h3>
+                <p>
+                  But why smiling man her imagine married. Chiefly can man her
+                  out believe manners cottage
+                </p>
+                <a href="#" class="btn-card">Read</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card-content">
+              <div class="card-img">
+                <img src="../images/blog3.jpg" alt="" />
+                <span id="blogss"><h4>Proper Gym</h4></span>
+              </div>
+              <div class="card-desc">
+                <h3>Proper Gym Etiquette: How to Not be a Newbie in the Gym</h3>
+                <p>
+                  But why smiling man her imagine married. Chiefly can man her
+                  out believe manners cottage
+                </p>
+                <a href="#" class="btn-card">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- blog -->
+    <!-- gallery -->
+    <div class="container-fluid position-relative overflow-hidden mb-3 border" id="gallery">
+      <div class="row ">
+          <div class="col-md-8 offset-md-2">
+              <div class="lc-block text-center">
+                  <span editable="inline" class="small mt-4 d-block"><i class="fa-solid fa-crown"></i> The King's Gym</span>
+                  <h2 editable="inline" class="display-2 mb-0"><b>Gallery</b></h2>
+                  <p editable="inline" > A well-built physique is a status symbol. It reflects you worked hard for it; no money can buy it. You cannot borrow it, you cannot inherit it, you cannot steal it. You cannot hold onto it without constant work.</p>
+              </div><!-- /lc-block -->
+          </div><!-- /col -->
+      </div>
+      
+      <div class="row">
+          <div class="col-lg-6">
+              <div class="row ">
+                  <div class="col-sm-6">
+                      <div class="lc-block">
+                          <div lc-helper="background" class="wall_img_1 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery1.jpg');" id="The Photo Title">
+                          </div>
+                          <div lc-helper="background" class="wall_img_1 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery2.jpg');" id="landscape 2">
+                          </div>
+                      </div>
+                      <!-- /lc-block -->
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="lc-block ">
+                          <div lc-helper="background" class="wall_img_2 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery3.jpg');" id="My title goes here">
+                          </div>
+                      </div>
+                      <div class="lc-block ">
+                          <div lc-helper="background" class="wall_img_2 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery4.jpg');" id="This is my landscape">
+                          </div>
+                      </div>
+                      <div class="lc-block ">
+                          <div lc-helper="background" class="wall_img_2 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery6.jpg');" id="landscape 3">
+                          </div>
+                      </div>
+                      <!-- /lc-block -->
+                  </div>
+              </div>
+              <!-- /lc-block -->
+          </div><!-- /col -->
+          <div class="col-lg-6">
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="lc-block">
+                          <div lc-helper="background" class="wall_img_1 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery5.jpg');" id="My photo">
+                          </div>
+                      </div>
+                      <div class="lc-block ">
+                          <div lc-helper="background" class="wall_img_1 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery7.jpg');" id="landscape 5">
+                          </div>
+                      </div>
+                      <!-- /lc-block -->
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="lc-block ">
+                          <div lc-helper="background" class="wall_img_2 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery8.jpg');" id="landscape 8">
+                          </div>
+                      </div>
+                      <div class="lc-block ">
+                          <div lc-helper="background" class="wall_img_2 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery9.jpg');" id="landscape 11">
+                          </div>
+                      </div>
+                      <div class="lc-block ">
+                          <div lc-helper="background" class="wall_img_2 rounded" style="background-size: cover; background-position: center; background-image: url('../images/gallery10.jpg');" id="landscape 10">
+                          </div>
+                      </div>
+                      <!-- /lc-block -->
+                  </div>
+              </div>
+              <!-- /lc-block -->
+          </div><!-- /col -->
+  
+      </div><!-- /col -->
+  </div>
+    <!-- gallery -->
+    <!-- footer -->
+    <footer class="text-center text-lg-start bg-dark text-muted mb-2">
+      <!-- Section: Social media -->
+      <div class="container-fluid  justify-content-lg-between border-bottom text-bg-dark">
+        <div class="row">
+          <section class="d-flex justify-content-center justify-content-lg-between p-2 border-bottom border">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block mt-3">
+              <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+            <!-- Right -->
+            <div>
+                <p class="d-flex justify-content-center align-items-center mt-2">
+                  <span class="me-3">Register for free</span>
+                  <button type="button" class="btn btn-outline-light btn-rounded mt-2">
+                    Sign up!
+                  </button>
+                </p>  
+            </div>
+            <!-- Right -->
+          </section>
+          <section class="">
+            <div class="container-fluid text-center text-md-start mt-1">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto ">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    <i class="fas fa-gem me-3"></i>Company name
+                  </h6>
+                  <p>
+                    Here you can use rows and columns to organize your footer content. Lorem ipsum
+                    dolor sit amet, consectetur adipisicing elit.
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 col-6 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Products
+                  </h6>
+                  <p>
+                    <a href="#" class="text-reset">home</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">gallery</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">about us</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">contect us</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 col-6 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    Useful links
+                  </h6>
+                  <p>
+                    <a href="#!" class="text-reset">Pricing</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">Settings</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">Orders</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">Help</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+                
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                  <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                  <p>
+                    <i class="fas fa-envelope me-3"></i>
+                    info@example.com
+                  </p>
+                  <p><i class="fas fa-phone me-3"></i> + 91 9054 300 736</p>
+                  <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                </div>
+                <div class="container-fluid">
+                  <div class="row d-inline">
+                    <div class="col-12 text-center mt-2">
+                      <ul class="list-inline">
+                        <li class="list-inline-item"><a target="_blank"class="btn btn-outline-light btn-floating m-1" 
+                          href="https://www.facebook.com/" role="button"
+                          ><i class="fab fa-facebook-f"></i
+                        ></a></li>
+                        <li class="list-inline-item"><a target="_blank"class="btn btn-outline-light btn-floating m-1" 
+                          href="https://www.twitter.com/" role="button"
+                          ><i class="fab fa-twitter"></i
+                        ></a></li>
+                        <li class="list-inline-item"><a target="_blank"class="btn btn-outline-light btn-floating m-1" 
+                          href="https://www.google.com/" role="button"
+                          ><i class="fab fa-google"></i
+                        ></a>
+                  </li>
+                        <li class="list-inline-item"><a target="_blank"class="btn btn-outline-light btn-floating m-1" 
+                          href="https://www.instagram.com/" role="button"
+                          ><i class="fab fa-instagram"></i
+                        ></a>
+                  </li>
+                        <li class="list-inline-item"><a target="_blank"class="btn btn-outline-light btn-floating m-1" 
+                          href="https://in.linkedin.com/" role="button"
+                          ><i class="fab fa-linkedin-in"></i
+                        ></a></li>
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
+         
+          </div>
+      <!-- Grid container -->
+              
+      <!-- Copyright -->
+      <hr>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 p-3 text-white d-flex justify-content-between ">
+            <h6 class="footer-texts">© 2022 Copyright</h6>
+            <a class="text-white text-decoration-none footer-texts" href="https://mdbootstrap.com/" >Disign By : yashzadafiya</a>
+            
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Copyright -->
+    </footer>
+    <!-- footer -->
+    <!-- javascript bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/266b76cb57.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".owl-carousel").owlCarousel({
+        loop: false,
+        margin: 15,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 2,
+          },
+          1000: {
+            items: 4,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

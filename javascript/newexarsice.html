@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card m-2">
+                    <div class="card-header text-bg-primary">
+                        Calculator Program in JavaScript 
+                    </div>
+                    <div class="card-body">
+                        <div class="container mt-3">
+                        <div class="row g-3">
+                            <div class="col-sm">
+                              <input type="number" placeholder="price per unit" id="priceperunit" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" placeholder="quntity" id="quntity" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" placeholder="CGST(%)"  id="CGST">
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" placeholder="SGST(%)" id="SGST" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" placeholder="total" id="total" >
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="totalincome"></div>
+                        <!-- <div class="container mt-3 ">
+                        <div class="row g-3">
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="price per unit" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="quntity" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="CGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="SGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="text" class="form-control" placeholder="Total =" >
+                            </div>
+                        </div>
+                    </div>
+                        <div class="container mt-3 ">
+                        <div class="row g-3">
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="price per unit" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="quntity" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="CGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="SGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="text" class="form-control" placeholder="Total =" >
+                            </div>
+                        </div>
+                    </div>
+                        <div class="container mt-3 ">
+                        <div class="row g-3">
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="price per unit" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="quntity" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="CGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="SGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="text" class="form-control" placeholder="Total =" >
+                            </div>
+                        </div>
+                    </div>
+                        <div class="container mt-3 ">
+                        <div class="row g-3">
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="price per unit" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="quntity" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="CGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="SGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="text" class="form-control" placeholder="Total =" >
+                            </div>
+                        </div>
+                    </div>
+                        <div class="container mt-3 ">
+                        <div class="row g-3">
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="price per unit" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="quntity" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="CGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="number" class="form-control" placeholder="SGST(%)" >
+                            </div>
+                            <div class="col-sm">
+                              <input type="text" class="form-control" placeholder="Total =" >
+                            </div>
+                        </div>
+                    </div>                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="total.js"></script>
+<script>
+        let priceperunit = document.getElementById("priceperunit").value;
+        let quntity = document.getElementById("quntity").value;
+        let CGST = document.getElementById("CGST").value;
+        let SGST= document.getElementById("SGST").value;
+        var priceperunit = parseInt(priceperunit);
+        var quntity = parseInt(quntity);
+        var CGST = parseInt(CGST);
+        var SGST = parseInt(SGST);
+        console.log(priceperunit);
+        console.log(quntity);
+        console.log(CGST);
+        console.log(SGST);
+//    function total(ButtonId,event)
+//    {
+//        
+//        if (priceperunit==0)
+//            {
+//                return priceperunit;
+//            }
+//            else if (quntity==0)
+//            {
+//                return quntity;
+//            }
+//            else if (CGST==0)
+//            {
+//                return CGST;
+//            }
+//            else if (SGST==0)
+//            {
+//                return SGST;
+//            }
+//            else 
+//            {
+//                alert('ok output will not found')
+//            }
+//            
+//    }
+    //function totalgst(ButtonId,event)
+    //{
+    //    let priceperunit = document.getElementById("priceperunit").value;
+    //    let quntity = document.getElementById("quntity").value;
+    //    let CGST = document.getElementById("CGST").value;
+    //    let SGST= document.getElementById("SGST").value;
+    //    var priceperunit = parseInt(priceperunit);
+    //    var quntity = parseInt(quntity);
+    //    var CGST = parseInt(CGST);
+    //    var SGST = parseInt(SGST);
+    //    if (ButtonId == "total") {
+    //        total = gst(priceperunit,quntity,CGST,SGST);
+    //      }
+    //      document.write(total)
+    //    }
+</script>
+</body>
+</html>
+
+
+<!-- this is new code success -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Example of 1st technique of event handling</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="">
+                            <div class="mb-3">
+                                <input type="number" class="form-control" id="priceperunit" placeholder="price per unit">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="second">Second Number</label>
+                                <input type="number" class="form-control" id="second">
+                            </div>
+                            <div class="mb-3">
+                                <button type="button"  onclick="Calculate(this.id,event);" class="btn btn-primary" id="addition">Addition</button>
+                                
+                            </div>
+                            <h1 class="mb-3" id="output"></h1>
+                            <h1 class="mb-3" id="output1"></h1>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="mymath.js"></script>
+<script>
+
+    function Calculate(ButtonId,event){
+        console.log(ButtonId);
+        console.log(event.type);
+        //if else if ladder decision making 
+        var result = null;
+        var priceperunit= document.getElementById("priceperunit").value;
+        var quntity = document.getElementById("second").value;
+        priceperunit = parseInt(priceperunit);
+        quntity = parseInt(quntity);
+        if (ButtonId=="addition")
+        {
+            var mul = priceperunit*quntity;
+            var cgst=mul/7;
+            var sgst=mul/5;
+        }
+        document.getElementById("output").innerHTML = sgst;
+        document.getElementById("output1").innerHTML = cgst;
+    }
+
+</script>
+</body>
+</html>
+
+  <!-- this is new code success -->
